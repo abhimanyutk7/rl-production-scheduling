@@ -148,7 +148,8 @@ compact historical evidence and all 200 final-test rows are retained.
 | `configs/`, `tests/` | Parameters and implementation checks |
 
 Established PPO, GAE, masking, learned dispatch, CEM and particle methods are
-credited in the report. Contributions concern integration, controller wrappers,
+credited in the report and the [source-to-implementation map](SOURCES.md).
+Contributions concern integration, controller wrappers,
 controlled protocols and audited evaluation. See the
 [design](docs/research_upgrade_design.md), [ledger](docs/research_upgrade_plan.md),
 [research report](outputs/inspection_research/report.md) and
