@@ -1,20 +1,24 @@
-# Adaptive inspection research implementation plan
+# Inspection study: implementation record
 
-> For agentic workers: execute with superpowers:executing-plans, task by task.
+This file keeps the original checklist and dated progress notes. The planned
+training and evaluation round is complete. The entries describe what was known
+at each stage, including failed checks and earlier restrictions on presentation
+work. Read the [final research report](../outputs/inspection_research/report.md)
+for the current conclusions.
 
 **Goal:** Build and evaluate adaptive inspection under uncertain machine health,
 persistent production state and electricity demand history.
 
-**Architecture:** Keep FactoryEnv and legacy commands unchanged. Introduce a
-validated inspection configuration and particle belief, a separate persistent
-environment, and an experiment module providing public-information controllers,
-PPO training, paired evaluation and branch comparisons.
+**Implementation approach:** Keep the earlier FactoryEnv and its saved models
+usable. Add a separate environment for persistent factory state, hidden condition
+and inspection. Connect it to the particle estimate, public-information rules,
+PPO training, matched evaluation and branch comparisons.
 
 **Tech stack:** Existing Python, NumPy, Gymnasium, SB3-Contrib, pandas, matplotlib.
 
 **Spec:** [research_upgrade_design.md](research_upgrade_design.md).
 
-## Global constraints
+## Requirements used during implementation
 
 - Preserve old models, commands and outputs; no mandatory dependencies added.
 - 13 masked actions: 10 job candidates, PM, inspection, bounded wait.
@@ -96,7 +100,7 @@ update README and this ledger. No automatic PPT rewrite before results exist.
 - [x] Report actual results, uncertainty, negative findings, provenance and
   candidate contribution versus closest prior work. Provide simple viva wording.
 
-## Progress and rulings
+## Dated decisions and progress
 
 ACTIVE 2026-11-02 renewed improvement request: user asks for research and
 maximum improvement before retraining, GPU if possible, with little time.
@@ -127,7 +131,7 @@ Small-network PPO can be CPU-bound; report measured throughput and chosen device
 Pre-training gates: tests for full-episode exact prior matching, service legality,
 public-only inputs, bounded60day features, permutation-consistent shared scoring,
 forward/evaluate/predict distribution agreement, effective residual gradients and
-serialization. Engineering sequences24400-24401; new validation10200-10209;
+serialization. Engineering sequences 24400-24401; new validation10200-10209;
 held-out primary tests24500-24549. Train0-999 only. Three training seeds,
 65536 PPO steps per condition, same budgets. Validation selects checkpoints,
 including stepzero; never use test outcomes to tune. Samefreshgrid for allcontrols.
@@ -142,7 +146,7 @@ explicitstate-dict inferencecopy with RNGpreservationregression. Successor
 study_v2 completed12rows/2models, allledgersreconciled,zeroinvalid,stepzeroequals
 strongprior. No efficacyclaim from that tinycheck.
 
-2048step actualPPObenchmark: CPU631.2steps/s, fullCUDA409.9, CUDAupdates579.0.
+2048step actualPPObenchmark: CPU 631.2steps/s, fullCUDA409.9, CUDAupdates579.0.
 Selected CUDAupdates for explicit GPUgradient use with limited(~9%)overhead vs
 CPU; CPUphysicalsimulationandper-decisioninference, CUDAminibatchupdates. All
 device/Adamstate transitions passed two-cycle tests and independentcheck.
@@ -153,7 +157,7 @@ Freeze residual_dispatch.py and its priority/core dependencies while active.
 
 Optional transfer protocol declared before main test inspection: use allthree
 saved residual policies, the frozen strongprior, originalSPT and three saved
-CEMpriority policies on ten new sequences24600-24609, exact60day/30daybilling
+CEMpriority policies on ten new sequences 24600-24609, exact60day/30daybilling
 config. No retraining or model/seed selection from these sequences. 80rows in a
 separate residual_transfer stage; do not mix with main700rows or oldtransfer.
 Do this only after main completes and its identities reconcile. Samefeature
@@ -193,9 +197,9 @@ Do not duplicate either run; monitorrecords preserve truecompleted/pending state
 2026-11-02 residual_dispatch COMPLETE:6models,700exactrows,50freshsequences,
 3trainingseeds. All2100daily/1400billingrecords/formula reconcile,0invalid,
 source/control/modelhashes,caches,checkpointselection andbootstrapreproduced.
-Allsixmodels performed32CUDAupdates. Residual selected[0,0,0], cost33.8021
+Allsixmodels performed32CUDAupdates. Residual selected[0,0,0], cost 33.8021
 exactlythefrozenretunedprior; doNOTcallthatPPOgain. Standalone no_prior selected
-[65536,57344,16384], cost37.9650 vslegacy46.3386 (~18.1%lower). Additional
+[65536,57344,16384], cost 37.9650 vslegacy46.3386 (~18.1%lower). Additional
 exploratorydifference-8.3736,95%[-12.9778,-3.3631]. VersusSPT36.8158 difference
 +1.1492[-2.1639,5.0655],uncertain; versusstrongprior difference+4.1629
 [1.0322,7.9730],worse. CEM33.8501, no_prior-minusCEM+4.1149[.2935,8.2949].
@@ -311,13 +315,13 @@ before reading the primary test summary, but remains exploratory reuse.
 Zero-shot priority_transfer completed via python -u -m factory_rl.transfer_study
 (session24480). Same actual60day/30daybilling config as originalfullcycle,
 three learned seeds plus originalSPT and validation-retunedsetupSPT, ten new
-sequences23300-23309,50verifiedrows,fourworkers. No transfer retraining or
+sequences 23300-23309,50verifiedrows,fourworkers. No transfer retraining or
 selection. Learned592.431 vs originalSPT665.974 (about11.0% lower mean cost),
 paired difference -73.543,95%[-100.594,-46.554]. RetunedsetupSPT597.897;
 learned-minus-retunedCI[-25.904,20.637] crosseszero. All choosezeroinspections.
 Independent review verified hashes, exactgrid,60dailyrecordsand2billingperiods
 perrow, allcostsreconciled,zeroinvalid. This is separate from the original
-five-seed500-sequence neural study. Keep horizon/algorithm/evidence boundaries.
+five-seed 500-sequence neural study. Keep horizon/algorithm/evidence boundaries.
 Audit identity implicitly imports currentpriorityimplementation; review verified
 it matches the primary hash now. If policy code changes later, do not resume
 this audit output; create a new named stage with explicit dependency hashing.

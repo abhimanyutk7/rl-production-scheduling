@@ -1,16 +1,18 @@
-# Adaptive inspection project: verified research status
+# Factory scheduling: results and interpretation
 
-Updated 2 November 2026. This is the consolidated entry point; individual run
-manifests and reports provide the measured evidence.
+The experiment results below were completed on 2 November 2026. This report
+explains what each study tested, what improved and which questions remain open.
+The linked manifests, episode tables and saved policies let a reviewer trace
+each comparison. The final PDF and 21-slide presentation are available in
+[the submission folder](../term_submission/).
 
-## Ready models and completed final check
+## Final selected models and fresh-test results
 
-This improvement round is complete: 12 new neural models trained with real CUDA
-updates, two independently audited 700-row studies, and a final 200-row fixed-policy
-test after 110 common-validation evaluations. All 1,600 new held-out rows have
-zero invalid actions and reconciled daily/billing records. The GPU test suite
-passes 73 tests; the preserved CPU runtime passes 72 with the CUDA-only test skipped.
-No PPT, presentation or demo UI was created or edited.
+The later improvement round trained 12 neural models with CUDA updates. It
+produced two 700-row studies and a final 200-row test after 110 common-validation
+evaluations. All 1,600 held-out rows passed the action and accounting checks.
+The recorded GPU suite passed 73 tests; the CPU suite passed 72 and skipped the
+CUDA-only test. The final report and presentation were prepared after training.
 
 The final selector compared all six saved standalone neural policies, three CEM
 policies and two rules on validation 10240-10249. It locked these choices before
@@ -488,7 +490,8 @@ cost interval that crosses zero.
 The narrower interaction to investigate is whether job urgency and inherited
 demand-peak headroom change the value of condition information. The first
 diagnostic did not establish an inspection advantage; this remains a hypothesis.
-It is not acceptable to promise that the proposed policy must outperform rules.
+The experiments must determine whether the policy improves on the rules;
+a positive result cannot be assumed.
 
 A separate deterministic teaching test checks the standard information-value
 calculation: with equal worn/healthy probabilities, process costs [8,0], a
@@ -506,7 +509,7 @@ claim. The longer held-out policy study must be interpreted independently.
 
 ![Implemented system diagram](system_diagram.png)
 
-## Closest research and contribution boundaries
+## Related work and what this project adds
 
 |Source|Established idea|Our proposed investigation|
 |---|---|---|
@@ -557,12 +560,12 @@ from a better-tuned simple rule was uncertain. The algorithms already exist; our
 contribution is the implemented formulation, controlled comparisons, readable
 controller and honest analysis of where the methods succeed or fail."
 
-## Honest limitations
+## Limitations
 
 The environment is an approximate partially observed model, not a proven exact
 POMDP state or a calibrated digital twin. Particle uncertainty must be evaluated
 by empirical coverage. Long finite horizons still have an end effect. The
 inspection economics and billing-history interaction are not yet established
 advantages. Initial results must not be turned into invented savings, AI accuracy,
-or a claim of a new PPO algorithm. Existing PowerPoint slides have not yet been
-updated to contain these new experiments.
+or a claim of a new PPO algorithm. The final 21-slide presentation now summarises the completed studies, with
+fuller explanations and sources in its notes.

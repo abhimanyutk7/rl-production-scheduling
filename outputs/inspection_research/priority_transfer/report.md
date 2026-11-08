@@ -2,7 +2,7 @@
 
 
 
-Controllers trained/selected on three-day accelerated-billing episodes are evaluated without retraining on 60 simulated days and two genuine 30-day billing periods. New scenario sequences23300-23309; three fitted search seeds. The two simple rules are deterministic comparators, not three independently trained models.
+Controllers trained/selected on three-day accelerated-billing episodes are evaluated without retraining on 60 simulated days and two genuine 30-day billing periods. New scenario sequences 23300-23309; three fitted search seeds. The two simple rules are deterministic comparators, not three independently trained models.
 
 This is a small exploratory transfer check, not the separate original500-sequence neural study and not real-factory validation. Costs span60days and must not be compared directly with three-day costs. Intervals resample training seeds and paired scenario sequences; ten sequences give limited power.
 

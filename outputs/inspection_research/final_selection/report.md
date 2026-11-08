@@ -1,6 +1,6 @@
 # Locked validation selection and fresh fixed-policy test
 
-11 candidates on ten common validation sequences10240-10249; choices locked before test24900-24949.
+11 candidates on ten common validation sequences 10240-10249; choices locked before test24900-24949.
 Selected neural: residual_dispatch_s0. Selected CEM: cem_s1. Overall validation winner: retuned_setup_spt.
 This evaluates single fixed selected policies on50 fresh three-day scenarios, not an algorithm average over training seeds.
 All service choices use disclosed public rules; inspection benefit is not tested. Normalised cost is not accuracy or money savings.

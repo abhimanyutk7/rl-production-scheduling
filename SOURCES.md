@@ -1,8 +1,8 @@
 # Sources, reuse and project contributions
 
-This file connects implemented elements to their sources. The report contains
-the full bibliography and measured comparisons. An established method, a cited
-idea and imported software are different kinds of reuse.
+The table below shows where the main ideas came from and how we used them.
+The report gives the full references and our measured results. We distinguish
+ideas that motivated a design from software we imported and code we implemented.
 
 ## Source-to-implementation map
 
@@ -27,11 +27,12 @@ idea and imported software are different kinds of reuse.
 `pyproject.toml` declares the imported numerical, simulation, optimisation and
 learning libraries. PyTorch supplies neural-network operations; Gymnasium
 supplies the environment interface; OR-Tools supplies the CP-SAT solver used by
-the original reference baseline. Standard dependency code remains attributed to
-its upstream authors. A package import is not a new algorithm contribution.
+the original reference baseline. These libraries provide much of the underlying numerical and learning
+functionality. Our contribution is how the factory model and experiment
+interfaces use that functionality.
 
-The source ZIP includes the user-supplied IEEE Access template and IEEEtran class
-with their notices. The local class adaptation addresses XeTeX colour support
+We used the supplied IEEE Access template for the course report. The LaTeX
+ZIP includes its class files and notices. The local class adaptation addresses XeTeX colour support
 and academic-project metadata, as described in the ZIP's README. The report is
 an unpublished course project, not an IEEE publication.
 
@@ -41,11 +42,11 @@ user-supplied performance handout guides evaluation coverage, not measured data.
 
 ## Implemented contribution and evidence
 
-The implemented work integrates the extended factory simulator, public
-information boundary, condition estimates, persistent billing, service/dispatch
-wrappers, shared scorer, readable search and controlled evaluation protocols.
-This does not establish that the individual components, or every combination of
-scheduling, maintenance and energy, are previously unknown.
+We built the extended factory simulator, defined what information a controller
+may see, implemented condition estimates and persistent billing, and connected
+the neural and readable controllers to that environment. We then compared them
+with shared scenarios, validation-based selection and cost checks. The individual
+methods have prior work; this study evaluates their use in our formulation.
 
 The [consolidated report](outputs/inspection_research/report.md) preserves both
 positive and negative comparisons. The
@@ -54,5 +55,5 @@ identifies saved policies before the final test. The
 [review script](scripts/review_submission.py) checks the saved neural checkpoint
 and final-test grid and can execute a short CPU replay.
 
-These citations document provenance. They are not a plagiarism-checker result
-or a certification of exclusive originality.
+The source links explain the methods and their relationship to this project.
+The experiment files provide the evidence for the results reported here.

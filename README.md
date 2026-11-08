@@ -1,9 +1,16 @@
 # Reinforcement learning for production scheduling
 
-22AIE401 term project: a simulated factory scheduler with setup, deadlines,
-uncertain machine condition, wear and electricity demand charges. We implement
-masked neural PPO, shared job scoring, readable CEM policy search and strong rules.
-All factory outcomes are simulated.
+This is our 22AIE401 term project. It studies a common factory decision: when a
+machine becomes free, which waiting job should run next? A short job may need a
+long setup, an urgent order may be close to its deadline, and running a worn
+machine can cause a breakdown. Electricity prices and demand charges add another
+reason to consider the whole schedule.
+
+We built a simulator for this problem and compared a neural controller trained
+with proximal policy optimisation (PPO), readable policy search and scheduling
+rules. The newer neural model learns job priorities while
+a declared rule handles service decisions. All reported factory outcomes come
+from simulation.
 
 ## Team
 
@@ -14,72 +21,98 @@ All factory outcomes are simulated.
 | Vishnu J | AM.SC.U4AIE23160 |
 | Swarag Padiyankunnath | AM.SC.U4AIE23058 |
 
-## Final deliverables
+## Submission files
 
-- [18-page IEEE-template academic report](outputs/term_submission/RL_Project_Report_IEEE.pdf)
-- [Complete LaTeX source ZIP](outputs/term_submission/RL_Project_Report_LaTeX.zip)
-- [21-slide final presentation](outputs/term_submission/RL_Production_Scheduling_Final_Review.pptx)
-- [Consolidated research report](outputs/inspection_research/report.md)
-- [Locked selection](outputs/inspection_research/final_selection/selection.json)
+- [Project report: 18 pages](outputs/term_submission/RL_Project_Report_IEEE.pdf)
+- [LaTeX source, figures and class files](outputs/term_submission/RL_Project_Report_LaTeX.zip)
+- [Final presentation: 21 slides](outputs/term_submission/RL_Production_Scheduling_Final_Review.pptx)
+- [Detailed experiment results](outputs/inspection_research/report.md)
 
-The IEEE template is academic formatting; this is not an IEEE publication.
+The report uses the supplied IEEE template for course formatting. It is an
+unpublished academic report.
 
-## Results and limitations
+## How a decision is made
 
-Four fixed validation-selected policies on 50 fresh three-day sequences:
+The environment identifies a machine that needs work. It gives the controller
+the available jobs, machine information, time, tariff and condition estimates.
+The shared network scores each legal candidate. The environment then applies
+the selected action, updates the factory and calculates the added cost.
 
-| Controller | Mean cost (lower better) | Completed | On time |
+During training, PPO samples legal actions and uses these experiences to update
+the actor and critic. During evaluation, the saved policy chooses its
+highest-probability legal action.
+
+The latest observation has 92 values: ten candidate slots with eight stored
+values each, plus twelve context values. For one candidate, the actor uses six
+job features and the twelve context values. Its network is
+`18 -> 64 -> 64 -> 1`. The same weights score every candidate. A separate critic
+pools the job information to estimate future return.
+
+The full inspection environment can dispatch, inspect, maintain or wait. The
+newer neural experiment narrows this problem: a fixed public service rule
+handles service and the neural actor ranks jobs. The cross-entropy method (CEM) is a separate controller
+that searches for readable job-feature weights and service thresholds.
+
+## Data and factory assumptions
+
+Processing durations come from the Taillard generator and published seeds
+distributed through [OR-Library](https://people.brunel.ac.uk/~mastjjb/jeb/orlib/jobshopinfo.html).
+We sample and scale those durations, then generate arrivals, deadlines, product
+types, routes and eligible-machine alternatives. Wear, failures, sensor noise
+and electricity settings are simulation assumptions. We did not collect real
+factory sensor measurements.
+
+Duration families are separated: ta01-ta06 for training, ta07-ta08 for validation,
+and ta09-ta10 for testing. The final validation sequences are 10240-10249; the
+final fresh test uses 24900-24949. Scenario seeds control factory generation;
+training seeds control learning randomness.
+
+The research configuration has five machines, three product types and 30 new
+jobs per day. The [sample CSV](outputs/dataset_sample_scenario_20000.csv) comes
+from an earlier 50-job configuration. Its 200 rows describe operation-machine
+alternatives, so several rows can belong to the same job.
+
+## What the experiments showed
+
+We selected policies on validation before running the final 50 fresh three-day
+sequences. Lower combined cost is better.
+
+| Controller | Mean cost | Jobs completed | Jobs on time |
 |---|---:|---:|---:|
 | Selected neural PPO | 39.733 | 98.42% | 49.20% |
 | Selected CEM | 34.669 | 98.87% | 61.84% |
 | Retuned setup-aware SPT | 36.308 | 98.87% | 60.13% |
 | Original SPT | 37.772 | 98.51% | 60.38% |
 
-CEM has the lowest observed test mean. The overall validation winner remains
-retuned SPT; test results do not change selection. Fixed-policy scenario intervals
-exclude training-seed and model-selection uncertainty.
+CEM had the lowest test mean in this comparison. Retuned SPT was the overall
+validation winner and remains the recorded selection. The scenario intervals
+for these fixed policies do not include variation across training seeds or
+uncertainty from selecting a model.
 
-A separate matched three-day study reduced mean cost from earlier neural 46.339
-to revised neural 37.965 (about 18.1%); tuned SPT remained better at 33.802.
-Architecture, inputs and service handling changed together. In the original
-60-day study adaptive cost was 965.963 versus SPT 652.847; four adaptive seeds
-retained pre-PPO imitation. Inspection benefit and neural superiority to strong
-rules are unestablished. These are normalised simulation costs, not accuracy,
-real currency savings, an optimality guarantee or industrial validation.
+In an earlier matched three-day comparison, the revised neural protocol reduced
+mean cost from 46.339 to 37.965, about 18.1%. Tuned SPT still did better at 33.802.
+That change included the architecture, inputs and service handling, so the gain
+cannot be assigned to the shared network alone.
 
-## Implementation and dataset
+The original 60-day study gave adaptive neural cost 965.963 versus SPT 652.847.
+Four adaptive seeds kept their pre-PPO imitation checkpoint. Neither this study
+nor the inspection diagnostics established an inspection benefit. The
+[research report](outputs/inspection_research/report.md) keeps these negative
+results alongside the later improvements.
 
-The simulator tracks ordered operations, setup, queues, hidden condition, service,
-electricity and persistent billing. Particle filtering estimates condition;
-action masks enforce legal choices. The latest neural wrapper stores 92 values.
-The shared actor scores each job with six job features plus twelve context values:
-`18 -> 64 -> 64 -> 1`; a separate pooled critic estimates return. A fixed public
-rule handles service, so the newer neural study learns dispatch only.
+Costs are scaled simulation objectives, not accuracy percentages or measured
+money savings. The base reward is negative added cost divided by `reward_scale`.
+The newer dispatch wrapper also divides by episode days. Evaluation tables use
+the full episode cost. Costs from different horizons should be read within
+their own experiment.
 
-MaskablePPO samples legal actions during training and updates actor/critic weights.
-Deterministic evaluation chooses its preferred legal action. CEM separately
-searches readable job-feature weights and service thresholds over whole episodes.
-Base reward is negative incremental cost divided by `reward_scale`; the newer
-wrapper also divides by episode days. Reported cost tables remain unscaled.
+## Install and run
 
-Durations derive from the Taillard generator and published seeds at
-[OR-Library](https://people.brunel.ac.uk/~mastjjb/jeb/orlib/jobshopinfo.html).
-We sample/scale durations and generate routes, alternatives, arrivals, deadlines,
-products, wear, failures and electricity assumptions. Real factory sensor data
-and unchanged Taillard optimal-makespan comparisons are not used.
-Duration families: ta01-ta06 training, ta07-ta08 validation, ta09-ta10 testing.
-Final validation uses 10240-10249; final testing uses 24900-24949. The research shop
-has five machines, three products and 30 jobs per day.
-The [sample CSV](outputs/dataset_sample_scenario_20000.csv) is an earlier 50-job
-configuration: its 200 rows are operation-machine alternatives, not 200 jobs.
+Use Python 3.12 for a fresh installation. Dependencies are listed in
+`pyproject.toml`: NumPy, Gymnasium, PyTorch, Stable-Baselines3, SB3-Contrib,
+OR-Tools, pandas, Matplotlib and scikit-learn. The test extra includes pytest.
 
-## Install
-
-Python 3.12 is recommended for a fresh installation. `pyproject.toml` declares
-NumPy, Gymnasium, PyTorch, Stable-Baselines3, SB3-Contrib, OR-Tools, pandas,
-Matplotlib and scikit-learn. The test extra adds pytest.
-
-Windows PowerShell, from the repository root:
+On Windows PowerShell, from the repository root:
 
 ```powershell
 py -3.12 -m venv .venv
@@ -87,7 +120,7 @@ py -3.12 -m venv .venv
 & '.\.venv\Scripts\python.exe' -m pip install -e '.[test]'
 ```
 
-Linux/macOS:
+On Linux or macOS:
 
 ```bash
 python3 -m venv .venv
@@ -95,63 +128,69 @@ source .venv/bin/activate
 python -m pip install -e '.[test]'
 ```
 
-CPU is sufficient for review. Recorded newer training used RTX 4050 Laptop CUDA
-batch updates with CPU simulation/inference. GPU use is not a guaranteed speedup.
-Manifests record original versions; exact training reproduction depends on them.
-
-## Run without retraining
+Review the saved submission without retraining:
 
 ```powershell
-# Verify the selected model hash, exact final-test grid and reported means.
+# Check the model hash, final-test rows and mean results.
 & '.\.venv\Scripts\python.exe' scripts/review_submission.py
-# Also execute eight real neural decisions on CPU.
+# Run eight environment decisions with the saved model, including forced actions.
 & '.\.venv\Scripts\python.exe' scripts/review_submission.py --replay
-# Run tests (a CUDA-only test can skip on CPU).
+# Run the tests. The CUDA-only check can skip on CPU hardware.
 & '.\.venv\Scripts\python.exe' -m pytest -q -p no:cacheprovider
-# List commands.
 & '.\.venv\Scripts\python.exe' -m factory_rl.cli --help
 ```
 
-The default review uses the standard library and reads saved evidence. Optional
-replay executes the saved neural model and simulator without modifying caches.
+The basic review command uses only Python's standard library. The optional
+replay loads the trained policy and runs the simulator on CPU. It leaves the
+saved experiment records unchanged.
 
-## Train new models
+The newer training used an RTX 4050 Laptop GPU for batch updates and the CPU
+for simulation and small inference calls. A GPU is not needed for review.
+The manifests record the original package versions; repeating training exactly
+also depends on those versions and the seeds.
+
+To run a new experiment:
 
 ```powershell
-# Original single-shift model, separate output.
+# Original single-shift controller.
 & '.\.venv\Scripts\python.exe' -m factory_rl.cli train --config configs/shop.json --steps 200000 --output outputs/new_joint
 & '.\.venv\Scripts\python.exe' -m factory_rl.cli evaluate --config configs/shop.json --models joint=outputs/new_joint --episodes 20 --output outputs/new_joint_evaluation
-# Newer shared scorer; uses preserved pilot/priority controls in the snapshot.
+# Shared scorer, using the preserved pilot and priority controls.
 & '.\.venv\Scripts\python.exe' -m factory_rl.residual_dispatch --device cpu --steps 65536 --seeds 3 --episodes 50 --output outputs/inspection_research/new_shared_study
 ```
 
-Training can take substantial time. Existing frozen stages reject incompatible
-identities; use a new directory for changed protocols. Large raw historical
-evaluation tables are excluded from Git. Complete source, saved controllers,
-compact historical evidence and all 200 final-test rows are retained.
+Training can take a long time. Use a new output directory when changing a
+protocol; the frozen stages reject incompatible settings. The repository
+includes the code, saved controllers, compact historical results and all 200
+final-test rows. Large raw historical evaluation tables remain outside Git.
 
-## Code and evidence map
+## Where to read the code
 
-| Location | Purpose |
+| File | What to look for |
 |---|---|
-| `factory_rl/inspection.py` | Factory, condition dynamics, actions, reward and costs |
-| `factory_rl/belief.py` | Particle condition estimation |
+| `factory_rl/inspection.py` | Factory transitions, actions, reward and costs |
+| `factory_rl/belief.py` | Machine-condition estimates |
 | `factory_rl/instances.py` | Duration and job generation |
-| `factory_rl/residual_dispatch.py` | Shared scorer and PPO training/evaluation |
-| `factory_rl/event_dispatch.py` | Grouped forced-transition experiment |
-| `factory_rl/priority_search.py` | Readable CEM search |
+| `factory_rl/residual_dispatch.py` | Shared actor, critic, PPO settings and training |
+| `factory_rl/event_dispatch.py` | Grouping forced transitions |
+| `factory_rl/priority_search.py` | Readable CEM policy search |
 | `factory_rl/refinement.py` | Actor/critic pretraining comparison |
 | `factory_rl/inspection_study.py` | Original study and paired statistics |
-| `factory_rl/agents.py` | Scenario pools and legacy PPO/DQN |
-| `factory_rl/baselines.py`, `factory_rl/cli.py` | Rules, solver and original CLI |
-| `scripts/review_submission.py` | Evidence verification and saved-model replay |
-| `configs/`, `tests/` | Parameters and implementation checks |
+| `factory_rl/agents.py` | Scenario pools and earlier PPO/DQN |
+| `factory_rl/baselines.py`, `factory_rl/cli.py` | Rules, solver and original commands |
+| `scripts/review_submission.py` | Saved-result checks and model replay |
+| `configs/`, `tests/` | Factory settings and implementation tests |
 
-Established PPO, GAE, masking, learned dispatch, CEM and particle methods are
-credited in the report and the [source-to-implementation map](SOURCES.md).
-Contributions concern integration, controller wrappers,
-controlled protocols and audited evaluation. See the
-[design](docs/research_upgrade_design.md), [ledger](docs/research_upgrade_plan.md),
-[research report](outputs/inspection_research/report.md) and
-[preserved history](docs/experiment_history.md). Historical notes contain dated
-interim results; the final deliverables and locked selection are current.
+## Ideas we used
+
+PPO, GAE, masking, shared dispatch, CEM and particle filtering come from existing
+work. The [source map](SOURCES.md) connects those ideas to our implementation.
+Our work brings them into this factory formulation and tests the resulting
+controllers under declared protocols.
+
+The [design](docs/research_upgrade_design.md) explains the assumptions. The
+[implementation record](docs/research_upgrade_plan.md) and
+[earlier development notes](docs/experiment_history.md) preserve the decisions
+and interim results. Use the final report and
+[locked selection](outputs/inspection_research/final_selection/selection.json)
+for the current conclusions.

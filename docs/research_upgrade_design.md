@@ -1,9 +1,10 @@
 # Research upgrade: learning when to inspect a factory machine
 
-Status: authorised for autonomous implementation on 30 October 2026. The design
-is a specification, not a claim that every experiment is complete. See the plan
-ledger and outputs/inspection_research/report.md for actual implementation and
-evidence status.
+This design was written on 30 October 2026, before the inspection experiments.
+It explains the assumptions and checks used to build the system. The experiments
+have since finished; the [research report](../outputs/inspection_research/report.md)
+gives their outcomes. Statements about existing results below refer to the
+project at the time this design was written.
 
 ## Purpose and contribution
 
@@ -23,8 +24,9 @@ not a claim to invent PPO, inspection planning, partially observed control,
 counterfactual explanation, or demand-charge optimisation. No world-first or
 superiority claim is justified before further literature comparison and results.
 
-Builder choices below are recommendations from Codex, not preferences explicitly
-selected by the user. They make the scope concrete enough to review and build.
+The initial implementation choices were proposed with Codex assistance. They
+are modelling decisions for this study, rather than measured factory properties
+or requirements individually selected by the team.
 
 ## Existing foundation and compatibility
 
@@ -367,7 +369,7 @@ additionally requires the declared multi-seed comparisons, uncertainty analysis
 and a report that includes negative findings. No minimum improvement percentage
 is an acceptance condition; a null result is valid if methods and evidence hold.
 
-## File and presentation discipline
+## Keeping files and results consistent
 
 Keep this as the single design document. Add only necessary implementation,
 configuration and test modules during construction. Use one named output root for
@@ -376,7 +378,7 @@ idea. Preserve all previous results. Do not generate a new PPT in the design sta
 Once the experiment is verified, update presentation evidence and speaker material
 to distinguish current results, new measured results, and remaining limitations.
 
-## Literature boundaries and sources checked
+## Related work and source checks
 
 These are foundations/comparisons, not assertions of exact feature copying:
 

@@ -1,4 +1,9 @@
-# Production scheduling with machine wear and demand peaks
+# Earlier development notes
+
+These notes were preserved from the earlier README when the submission was
+prepared. Dates matter: training status, commands and presentation statements
+describe that stage of the project. The root README and final research report
+contain the current results and review instructions.
 
 ## Completed neural improvement — 2 November 2026
 
