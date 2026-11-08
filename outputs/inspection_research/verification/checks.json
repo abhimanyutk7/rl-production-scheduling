@@ -1,0 +1,258 @@
+{
+  "date": "2026-10-30",
+  "pytest": "........................................................                 [100%]\n56 passed in 6.89s",
+  "dependency_check": "No broken requirements found.",
+  "gymnasium": "passed",
+  "full_cycle_source_unchanged": true,
+  "seconds": 12.64272419991903,
+  "final_pilot_rows": 1250,
+  "final_pilot_grid": "passed",
+  "final_pilot_ledgers": "all reconciled",
+  "final_pilot_invalid_actions": 0,
+  "controller_upgrade_2026_11_01": {
+    "pytest": "63 passed",
+    "frozen_original_source_unchanged": true,
+    "critic_refinement": {
+      "status": "complete",
+      "rows": 850,
+      "invalid_actions": 0
+    },
+    "priority_search": {
+      "status": "complete",
+      "rows": 550,
+      "invalid_actions": 0
+    },
+    "priority_audit": {
+      "status": "complete",
+      "rows": 500,
+      "invalid_actions": 0
+    },
+    "priority_transfer": {
+      "status": "complete",
+      "rows": 50,
+      "invalid_actions": 0,
+      "days": 60,
+      "billing_periods": 2
+    },
+    "verification": "Exact grids, unique keys, all daily final objectives and billing charges reconciled; independently reviewed"
+  },
+  "full_cycle_2026_11_02": {
+    "status": "passed",
+    "rows": 12500,
+    "models": 15,
+    "exact_grid": true,
+    "invalid_actions": 0,
+    "daily_records": 750000,
+    "billing_records": 25000,
+    "source_unchanged": true,
+    "source_hash": "6e327fa8659a4b498fb432cc72cd9c418916e0cd1b04f65771dada92fbcbb55a",
+    "episodes_sha256": "4418b82bf75616dc41de0f6832ca777c7dfac07fb6e504b66ecb416da4473ced",
+    "all_cache_rows_match": true,
+    "primary_bootstrap_reproduced": true,
+    "independent_review": "passed; full_cycle/verification_review.json",
+    "pytest": "63 passed in 14.54s; original CPU environment before new round"
+  },
+  "residual_preflight_2026_11_02": {
+    "pytest": "71 passed in 32.22s",
+    "gpu": "RTX4050Laptop6GB",
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu_math": "passed forward and backward",
+    "dependency_check": "No broken requirements found.",
+    "legacy_model_reload": true,
+    "original_source_unchanged": true,
+    "smoke": "12 rows,2 models,zeroinvalid,allledgersreconciled; stepzeroequalsprior; engineeringonly",
+    "independent_code_review": "No important findings; actualtwoCUDAcycles verified",
+    "device_benchmark": "residual_verification/device_benchmark.json"
+  },
+  "event_preflight_2026_11_02": {
+    "pytest": "73 passed in 14.66s under GPU runtime",
+    "independent_review": "No important correctness findings; isolated physical-budget CUDA check passed",
+    "forced_actions": "10 paired TRAINING-only trajectories;66.41percentforced;physicalactions/states/traces/ledgers/rewardequivalent",
+    "budget": "65536 physical target per seed/condition,overshootandprobeexplicit;GAEtimechanges",
+    "evidence": "residual_verification/forced_decisions.json",
+    "original_CPU_runtime": "72 passed,1 skipped in16.89s; CUDA-only test skipped"
+  },
+  "residual_dispatch_2026_11_02": {
+    "status": "passed",
+    "rows": 700,
+    "invalid_actions": 0,
+    "daily_records": 2100,
+    "billing_records": 1400,
+    "exact_grid": true,
+    "source_and_controls_unchanged": true,
+    "all_cache_rows_match": true,
+    "paired_uncertainty_reproduced": true,
+    "episodes_sha256": "b70f4d187778887fa033c861aebc6cb2610c7a81c372c4e08dc996ed928ebcea",
+    "checkpoints": [
+      {
+        "condition": "residual",
+        "seed": 0,
+        "selected_steps": 0,
+        "gpu_update_calls": 32,
+        "model_sha256": "aae3ae2c9a22b0f3465c908a9fbc0a55978c59114de7398622d9289dad326589"
+      },
+      {
+        "condition": "no_prior",
+        "seed": 0,
+        "selected_steps": 65536,
+        "gpu_update_calls": 32,
+        "model_sha256": "a21a5ffc0c339d0db9d675c74e5d93a705e75f35f6d16c870517cc56d33ee14a"
+      },
+      {
+        "condition": "residual",
+        "seed": 1,
+        "selected_steps": 0,
+        "gpu_update_calls": 32,
+        "model_sha256": "334dc1b2d69d77671a294646c3e09ca6fbc949da2f9f746a8b8b34deff73b676"
+      },
+      {
+        "condition": "no_prior",
+        "seed": 1,
+        "selected_steps": 57344,
+        "gpu_update_calls": 32,
+        "model_sha256": "8990b69e8009db3f3830a51a63fad971f7be1fa222e6b32898fa5ba5b3432c84"
+      },
+      {
+        "condition": "residual",
+        "seed": 2,
+        "selected_steps": 0,
+        "gpu_update_calls": 32,
+        "model_sha256": "720177fe784f6ac79932089ff01e79af396dc5b16780dc8a2ce5adad8bf5e1f8"
+      },
+      {
+        "condition": "no_prior",
+        "seed": 2,
+        "selected_steps": 16384,
+        "gpu_update_calls": 32,
+        "model_sha256": "4e01c86b1556e2374f3cb827f007eb533deac26afedd212b794be181f6b574c7"
+      }
+    ],
+    "independent_results_review": "passed; verification_review.json; independently recomputed two-axis bootstrap and replayed neural example"
+  },
+  "event_dispatch_2026_11_02": {
+    "status": "passed",
+    "rows": 700,
+    "invalid_actions": 0,
+    "daily_records": 2100,
+    "billing_records": 1400,
+    "exact_grid": true,
+    "source_and_controls_unchanged": true,
+    "all_cache_rows_match": true,
+    "paired_uncertainty_reproduced": true,
+    "episodes_sha256": "18330727cc87e27473ba1f920a6118136158a1952703eae1e5f7fd68ffa0cdd9",
+    "models": [
+      {
+        "condition": "event_residual",
+        "seed": 0,
+        "selected_steps": 0,
+        "physical_steps": 66711,
+        "trained_rollout_physical_steps": 66707,
+        "physical_overshoot": 1171,
+        "outer_steps": 20484,
+        "choice_steps": 20303,
+        "episodes": 177,
+        "gpu_update_calls": 40,
+        "model_sha256": "4268596038dc3dac46841ccbe55b5da57c0669374eb5ec5d3609360acb9c619e"
+      },
+      {
+        "condition": "event_no_prior",
+        "seed": 0,
+        "selected_steps": 15360,
+        "physical_steps": 65642,
+        "trained_rollout_physical_steps": 65638,
+        "physical_overshoot": 102,
+        "outer_steps": 24580,
+        "choice_steps": 24374,
+        "episodes": 202,
+        "gpu_update_calls": 48,
+        "model_sha256": "9eacb394e3b0e03e3087bf479b68a5c97a2c1d751d9afdbd24506e77d21f3258"
+      },
+      {
+        "condition": "event_residual",
+        "seed": 1,
+        "selected_steps": 0,
+        "physical_steps": 65972,
+        "trained_rollout_physical_steps": 65968,
+        "physical_overshoot": 432,
+        "outer_steps": 19972,
+        "choice_steps": 19793,
+        "episodes": 175,
+        "gpu_update_calls": 39,
+        "model_sha256": "eedd63cee40b64e11d5358b9a87b8d0fd55c7664cf3e0783a3126553dc977c50"
+      },
+      {
+        "condition": "event_no_prior",
+        "seed": 1,
+        "selected_steps": 18432,
+        "physical_steps": 66065,
+        "trained_rollout_physical_steps": 66000,
+        "physical_overshoot": 464,
+        "outer_steps": 24580,
+        "choice_steps": 24373,
+        "episodes": 203,
+        "gpu_update_calls": 48,
+        "model_sha256": "0501487288b9638ccc37157098b67b4bcd828f3a657e5efe57684352623b6eeb"
+      },
+      {
+        "condition": "event_residual",
+        "seed": 2,
+        "selected_steps": 0,
+        "physical_steps": 66995,
+        "trained_rollout_physical_steps": 66989,
+        "physical_overshoot": 1453,
+        "outer_steps": 20996,
+        "choice_steps": 20813,
+        "episodes": 179,
+        "gpu_update_calls": 41,
+        "model_sha256": "cce0f57e49e5667b9f1032e214848d16c81665edf39707754aa13f734a1ae99c"
+      },
+      {
+        "condition": "event_no_prior",
+        "seed": 2,
+        "selected_steps": 12800,
+        "physical_steps": 66340,
+        "trained_rollout_physical_steps": 66335,
+        "physical_overshoot": 799,
+        "outer_steps": 25604,
+        "choice_steps": 25393,
+        "episodes": 207,
+        "gpu_update_calls": 50,
+        "model_sha256": "ea2dee5d06661ee966ac0bcfe1f8ede5febcd81255399a9ff466c69c08240737"
+      }
+    ],
+    "independent_review": "passed; verification_review.json; independent bootstrap"
+  },
+  "final_selection_2026_11_02": {
+    "status": "passed",
+    "exact_grid": true,
+    "selection_sha256": "423d8586c8d22a5b9110ab2d3fcb832033eff461b5888bb63ce2a2fa189d7e65",
+    "episodes_sha256": "1f818aa3d5c134c8cba749972eb96383d7ff5876d57cdd0ed45b79861f1aa0de",
+    "validation_rows": 110,
+    "validation_accounting": {
+      "rows": 110,
+      "invalid_actions": 0,
+      "daily_records": 330,
+      "billing_records": 220,
+      "accounting": "all daily/billing/objective formulas reconciled"
+    },
+    "rows": 200,
+    "invalid_actions": 0,
+    "daily_records": 600,
+    "billing_records": 400,
+    "accounting": "all daily/billing/objective formulas reconciled",
+    "independent_review": "passed; verification_review.json; independent fixed-policy scenario bootstrap",
+    "selected_neural": {
+      "name": "residual_dispatch_s0",
+      "kind": "neural",
+      "path": "outputs\\inspection_research\\residual_dispatch\\models\\no_prior_s0",
+      "sha256": "a21a5ffc0c339d0db9d675c74e5d93a705e75f35f6d16c870517cc56d33ee14a",
+      "selected_steps": 65536
+    },
+    "selected_cem": "cem_s1",
+    "overall_validation_winner": "retuned_setup_spt",
+    "selected_GPU_trained_checkpoint_original_CPU_replay": "passed; chosen action and probabilities match",
+    "PPT_or_demo_UI_changed": false
+  },
+  "renewed_round_status": "complete:12 CUDA-trained models,1600 new held-out rows plus110 common-validation rows; no remaining active training"
+}

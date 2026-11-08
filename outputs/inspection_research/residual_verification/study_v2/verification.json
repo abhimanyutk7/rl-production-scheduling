@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "rows": 12,
+  "models": 2,
+  "invalid_actions": 0,
+  "all_ledgers_reconciled": true,
+  "step_zero_equals_prior": true,
+  "method": "GPU updates with CPU collection",
+  "evidence": "engineering only; not policy superiority"
+}

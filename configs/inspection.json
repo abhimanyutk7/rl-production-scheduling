@@ -1,0 +1,19 @@
+{
+  "days": 60,
+  "billing_days": 30,
+  "jobs": 30,
+  "machines": 5,
+  "machine_slots": 10,
+  "start_hour": 14,
+  "shift_minutes": 480,
+  "arrival_minutes": 240,
+  "particles": 256,
+  "inspection_minutes": 5,
+  "inspection_noise": 0.03,
+  "inspection_cost": 100.0,
+  "initial_health_low": 0.6,
+  "wear_rate_sigma": 0.2,
+  "wear_noise_cv": 0.35,
+  "initial_peak_kw": 0.0,
+  "random_initial_peak": false
+}

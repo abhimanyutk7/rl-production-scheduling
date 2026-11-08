@@ -1,0 +1,4 @@
+candidate,reference,mean_difference,ci_low,ci_high,training_seeds,scenarios,uncertainty
+selected_neural,selected_cem,5.064175822222224,2.7688925661111123,7.433772695555573,0,50,paired scenario bootstrap for fixed validation-selected policies; no across-training-seed uncertainty
+selected_neural,retuned_setup_spt,3.4248959333333295,1.8746370105555374,5.356548313888886,0,50,paired scenario bootstrap for fixed validation-selected policies; no across-training-seed uncertainty
+selected_neural,spt,1.9607300666666458,-0.497098096111146,4.584230350555522,0,50,paired scenario bootstrap for fixed validation-selected policies; no across-training-seed uncertainty

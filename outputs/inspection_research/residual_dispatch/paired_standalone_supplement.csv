@@ -1,0 +1,5 @@
+candidate,reference,mean_difference,ci_low,ci_high,training_seeds,scenarios,uncertainty,analysis_status
+no_prior,legacy_adaptive,-8.37363285925927,-12.977809690000024,-3.363051674999993,3,50,hierarchical training-seed and paired-scenario bootstrap,additional standalone-neural comparisons after primary run; exploratory unadjusted intervals
+no_prior,retuned_setup_spt,4.162905496296304,1.032180740740743,7.973010286481497,3,50,hierarchical training-seed and paired-scenario bootstrap,additional standalone-neural comparisons after primary run; exploratory unadjusted intervals
+no_prior,spt,1.1491666962963074,-2.163893591666654,5.0654898964814885,3,50,hierarchical training-seed and paired-scenario bootstrap,additional standalone-neural comparisons after primary run; exploratory unadjusted intervals
+no_prior,learned_priority,4.114892014814822,0.2934785083333326,8.2948868777778,3,50,hierarchical training-seed and paired-scenario bootstrap,additional standalone-neural comparisons after primary run; exploratory unadjusted intervals

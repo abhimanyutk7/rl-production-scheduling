@@ -1,0 +1,50 @@
+{
+  "scenario": 997,
+  "split": "training; illustrative actual prediction",
+  "condition": "no_prior",
+  "selected_by": "minimum validation cost among this condition; not best test seed",
+  "model": "outputs\\inspection_research\\residual_dispatch\\models\\no_prior_s2",
+  "model_sha256": "4e01c86b1556e2374f3cb827f007eb533deac26afedd212b794be181f6b574c7",
+  "chosen_action": 1,
+  "prior_action": 1,
+  "time": 30,
+  "machine": 0,
+  "public_context": {
+    "shift_time": 0.02083333395421505,
+    "episode_left": 0.9910714030265808,
+    "tariff": 0.5833333134651184,
+    "peak": 0.13955555856227875,
+    "queue": 0.0625,
+    "late": 0.0,
+    "health_mean": 0.7719955444335938,
+    "health_std": 0.11108304560184479,
+    "health_q05": 0.5869709253311157,
+    "health_q95": 0.9449504613876343,
+    "busy": 0.20000000298023224,
+    "remaining": 0.0033333334140479565
+  },
+  "explanation": "Exact actor logit decomposition and masked probabilities; not a causal feature attribution or optimality guarantee.",
+  "service": "fixed public rule; no learned inspection/maintenance",
+  "candidates": [
+    {
+      "job": 3,
+      "duration": 5,
+      "setup": 8,
+      "slack": 25,
+      "prior_logit": 0.0,
+      "neural_residual_logit": -0.010442658327519894,
+      "final_logit": -0.010442658327519894,
+      "masked_probability": 0.499355673789978
+    },
+    {
+      "job": 0,
+      "duration": 16,
+      "setup": 0,
+      "slack": 60,
+      "prior_logit": 0.0,
+      "neural_residual_logit": -0.007865386083722115,
+      "final_logit": -0.007865386083722115,
+      "masked_probability": 0.500644326210022
+    }
+  ]
+}

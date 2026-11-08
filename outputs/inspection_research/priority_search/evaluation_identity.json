@@ -1,0 +1,8 @@
+{
+  "policy_sha256": {
+    "policy_s0.json": "0dbd8ff45dcd9c74b22ee981bee3c4b4b93d095c5e1b0dda604a962ce830f563",
+    "policy_s1.json": "330d4e1598f3de525bcc434cd66ae4564dfd827d8852ef84e048321a9a7ea59c",
+    "policy_s2.json": "e60bc7f4a64bc3e7ee6eb7608f886e98d81e34090455f6ad1b6b69b2e849fa76"
+  },
+  "rules_sha256": "a3f51abf3a817458af73ec677ecf3a42c3ab4f931acefecaf511311f5088bf4c"
+}

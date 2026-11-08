@@ -1,0 +1,5 @@
+candidate,reference,mean_difference,ci_low,ci_high,training_seeds,scenarios,uncertainty
+learned_priority,retuned_setup_spt,-0.338399533333326,-1.8871134633333297,1.3888434853703933,3,50,hierarchical training-seed and paired-scenario bootstrap
+learned_priority,fixed_service,0.8620690000000055,-0.6591719016666635,2.46766108111113,3,50,hierarchical training-seed and paired-scenario bootstrap
+learned_priority,without_energy,0.5692944888888931,-0.10830489259259242,1.672236482222229,3,50,hierarchical training-seed and paired-scenario bootstrap
+learned_priority,without_urgency_age,0.06416400740742081,-0.9769288101851763,1.0620109157407576,3,50,hierarchical training-seed and paired-scenario bootstrap

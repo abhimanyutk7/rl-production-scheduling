@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "exact_grid": true,
+  "selection_sha256": "423d8586c8d22a5b9110ab2d3fcb832033eff461b5888bb63ce2a2fa189d7e65",
+  "episodes_sha256": "1f818aa3d5c134c8cba749972eb96383d7ff5876d57cdd0ed45b79861f1aa0de",
+  "validation_rows": 110,
+  "validation_accounting": {
+    "rows": 110,
+    "invalid_actions": 0,
+    "daily_records": 330,
+    "billing_records": 220,
+    "accounting": "all daily/billing/objective formulas reconciled"
+  },
+  "rows": 200,
+  "invalid_actions": 0,
+  "daily_records": 600,
+  "billing_records": 400,
+  "accounting": "all daily/billing/objective formulas reconciled"
+}

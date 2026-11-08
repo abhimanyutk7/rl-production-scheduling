@@ -1,0 +1,227 @@
+[
+  {
+    "setup_weight": 0,
+    "maintenance_threshold": 0.55,
+    "validation_cost": 41.82263000000001,
+    "weights": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.55,
+      1.0
+    ]
+  },
+  {
+    "setup_weight": 0,
+    "maintenance_threshold": 0.7,
+    "validation_cost": 43.16405511111108,
+    "weights": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.7,
+      1.0
+    ]
+  },
+  {
+    "setup_weight": 0,
+    "maintenance_threshold": 0.85,
+    "validation_cost": 45.91758333333335,
+    "weights": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.85,
+      1.0
+    ]
+  },
+  {
+    "setup_weight": 1,
+    "maintenance_threshold": 0.55,
+    "validation_cost": 38.43835555555559,
+    "weights": [
+      1.0,
+      0.5,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.55,
+      1.0
+    ]
+  },
+  {
+    "setup_weight": 1,
+    "maintenance_threshold": 0.7,
+    "validation_cost": 37.73590533333329,
+    "weights": [
+      1.0,
+      0.5,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.7,
+      1.0
+    ]
+  },
+  {
+    "setup_weight": 1,
+    "maintenance_threshold": 0.85,
+    "validation_cost": 40.40003844444444,
+    "weights": [
+      1.0,
+      0.5,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.85,
+      1.0
+    ]
+  },
+  {
+    "setup_weight": 2,
+    "maintenance_threshold": 0.55,
+    "validation_cost": 35.17529866666661,
+    "weights": [
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.55,
+      1.0
+    ]
+  },
+  {
+    "setup_weight": 2,
+    "maintenance_threshold": 0.7,
+    "validation_cost": 34.29281422222222,
+    "weights": [
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.7,
+      1.0
+    ]
+  },
+  {
+    "setup_weight": 2,
+    "maintenance_threshold": 0.85,
+    "validation_cost": 40.511126222222224,
+    "weights": [
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.85,
+      1.0
+    ]
+  },
+  {
+    "setup_weight": 4,
+    "maintenance_threshold": 0.55,
+    "validation_cost": 34.96612466666659,
+    "weights": [
+      1.0,
+      2.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.55,
+      1.0
+    ]
+  },
+  {
+    "setup_weight": 4,
+    "maintenance_threshold": 0.7,
+    "validation_cost": 33.46617466666662,
+    "weights": [
+      1.0,
+      2.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.7,
+      1.0
+    ]
+  },
+  {
+    "setup_weight": 4,
+    "maintenance_threshold": 0.85,
+    "validation_cost": 38.3757522222222,
+    "weights": [
+      1.0,
+      2.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.85,
+      1.0
+    ]
+  },
+  {
+    "setup_weight": 8,
+    "maintenance_threshold": 0.55,
+    "validation_cost": 32.90128244444436,
+    "weights": [
+      1.0,
+      4.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.55,
+      1.0
+    ]
+  },
+  {
+    "setup_weight": 8,
+    "maintenance_threshold": 0.7,
+    "validation_cost": 35.00977822222215,
+    "weights": [
+      1.0,
+      4.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.7,
+      1.0
+    ]
+  },
+  {
+    "setup_weight": 8,
+    "maintenance_threshold": 0.85,
+    "validation_cost": 38.23637866666666,
+    "weights": [
+      1.0,
+      4.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.85,
+      1.0
+    ]
+  }
+]

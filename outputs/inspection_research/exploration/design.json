@@ -1,0 +1,29 @@
+{
+  "worlds": 16,
+  "loads": [
+    18,
+    30
+  ],
+  "state_minutes": [
+    0,
+    90,
+    240
+  ],
+  "durations": [
+    1,
+    5
+  ],
+  "headroom": [
+    0,
+    60
+  ],
+  "noise": [
+    0,
+    0.1
+  ],
+  "cost": [
+    0,
+    25
+  ],
+  "horizon": 180
+}

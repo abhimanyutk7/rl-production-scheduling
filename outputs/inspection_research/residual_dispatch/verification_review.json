@@ -1,0 +1,332 @@
+{
+  "status": "passed",
+  "review": "Independent result audit; only this review JSON written",
+  "rows": 700,
+  "exact_grid": true,
+  "invalid_actions": 0,
+  "daily_records": 2100,
+  "billing_records": 1400,
+  "source_and_control_hashes_match": true,
+  "checkpoint_hashes_and_selection_verified": true,
+  "all_caches_match": true,
+  "independent_primary_bootstrap_matches": true,
+  "bootstrap": "2000 crossed resamples of training seeds and shared scenario indices; seed 702; supplemental intervals exploratory and unadjusted",
+  "maximum_accounting_errors": {
+    "daily": 7.105427357601002e-15,
+    "billing": 3.637978807091713e-12,
+    "objective": 1.4210854715202004e-14
+  },
+  "optional_missing_fields": {
+    "changed_dispatches": 350,
+    "dispatch_decisions": 350,
+    "wall_seconds": 200
+  },
+  "optional_missing_explanation": "External controls omit dispatch diagnostics; CEM and SPT omit wall_seconds. All physical/objective fields are finite.",
+  "episodes_sha256": "b70f4d187778887fa033c861aebc6cb2610c7a81c372c4e08dc996ed928ebcea",
+  "selected_checkpoints": [
+    {
+      "condition": "residual",
+      "seed": 0,
+      "selected_steps": 0,
+      "validation_cost": 34.83631011111109,
+      "actual_steps": 65536,
+      "gpu_update_calls": 32,
+      "model_sha256": "aae3ae2c9a22b0f3465c908a9fbc0a55978c59114de7398622d9289dad326589"
+    },
+    {
+      "condition": "residual",
+      "seed": 1,
+      "selected_steps": 0,
+      "validation_cost": 34.83631011111109,
+      "actual_steps": 65536,
+      "gpu_update_calls": 32,
+      "model_sha256": "334dc1b2d69d77671a294646c3e09ca6fbc949da2f9f746a8b8b34deff73b676"
+    },
+    {
+      "condition": "residual",
+      "seed": 2,
+      "selected_steps": 0,
+      "validation_cost": 34.83631011111109,
+      "actual_steps": 65536,
+      "gpu_update_calls": 32,
+      "model_sha256": "720177fe784f6ac79932089ff01e79af396dc5b16780dc8a2ce5adad8bf5e1f8"
+    },
+    {
+      "condition": "no_prior",
+      "seed": 0,
+      "selected_steps": 65536,
+      "validation_cost": 37.52608322222222,
+      "actual_steps": 65536,
+      "gpu_update_calls": 32,
+      "model_sha256": "a21a5ffc0c339d0db9d675c74e5d93a705e75f35f6d16c870517cc56d33ee14a"
+    },
+    {
+      "condition": "no_prior",
+      "seed": 1,
+      "selected_steps": 57344,
+      "validation_cost": 37.71690788888889,
+      "actual_steps": 65536,
+      "gpu_update_calls": 32,
+      "model_sha256": "8990b69e8009db3f3830a51a63fad971f7be1fa222e6b32898fa5ba5b3432c84"
+    },
+    {
+      "condition": "no_prior",
+      "seed": 2,
+      "selected_steps": 16384,
+      "validation_cost": 35.03868555555554,
+      "actual_steps": 65536,
+      "gpu_update_calls": 32,
+      "model_sha256": "4e01c86b1556e2374f3cb827f007eb533deac26afedd212b794be181f6b574c7"
+    }
+  ],
+  "primary_comparisons": [
+    {
+      "candidate": "residual",
+      "reference": "no_prior",
+      "mean_difference": -4.162905496296304,
+      "ci_low": -7.973010286481498,
+      "ci_high": -1.0321807407407442,
+      "training_seeds": 3,
+      "scenarios": 50,
+      "seed_mean_differences": {
+        "0": -2.362128911111122,
+        "1": -8.515028955555568,
+        "2": -1.6115586222222225
+      }
+    },
+    {
+      "candidate": "residual",
+      "reference": "retuned_setup_spt",
+      "mean_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "training_seeds": 3,
+      "scenarios": 50,
+      "seed_mean_differences": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      }
+    },
+    {
+      "candidate": "residual",
+      "reference": "spt",
+      "mean_difference": -3.0137387999999965,
+      "ci_low": -4.917387233888881,
+      "ci_high": -1.1387346072222226,
+      "training_seeds": 3,
+      "scenarios": 50,
+      "seed_mean_differences": {
+        "0": -3.0137387999999965,
+        "1": -3.0137387999999965,
+        "2": -3.0137387999999965
+      }
+    },
+    {
+      "candidate": "residual",
+      "reference": "legacy_adaptive",
+      "mean_difference": -12.536538355555573,
+      "ci_low": -15.026101833333351,
+      "ci_high": -10.097308191851846,
+      "training_seeds": 3,
+      "scenarios": 50,
+      "seed_mean_differences": {
+        "0": -12.20864340000002,
+        "1": -11.306722133333341,
+        "2": -14.09424953333336
+      }
+    },
+    {
+      "candidate": "residual",
+      "reference": "learned_priority",
+      "mean_difference": -0.04801348148148295,
+      "ci_low": -1.7862321507407366,
+      "ci_high": 1.4718990737036994,
+      "training_seeds": 3,
+      "scenarios": 50,
+      "seed_mean_differences": {
+        "0": 0.9335847999999938,
+        "1": 0.37605371111111746,
+        "2": -1.45367895555556
+      }
+    }
+  ],
+  "standalone_supplemental_comparisons": [
+    {
+      "candidate": "no_prior",
+      "reference": "legacy_adaptive",
+      "mean_difference": -8.373632859259269,
+      "ci_low": -12.977809690000027,
+      "ci_high": -3.3630516749999937,
+      "training_seeds": 3,
+      "scenarios": 50,
+      "seed_mean_differences": {
+        "0": -9.8465144888889,
+        "1": -2.791693177777773,
+        "2": -12.482690911111135
+      }
+    },
+    {
+      "candidate": "no_prior",
+      "reference": "spt",
+      "mean_difference": 1.1491666962963074,
+      "ci_low": -2.1638935916666546,
+      "ci_high": 5.0654898964814885,
+      "training_seeds": 3,
+      "scenarios": 50,
+      "seed_mean_differences": {
+        "0": -0.651609888888875,
+        "1": 5.501290155555572,
+        "2": -1.4021801777777738
+      }
+    },
+    {
+      "candidate": "no_prior",
+      "reference": "retuned_setup_spt",
+      "mean_difference": 4.162905496296304,
+      "ci_low": 1.032180740740743,
+      "ci_high": 7.973010286481497,
+      "training_seeds": 3,
+      "scenarios": 50,
+      "seed_mean_differences": {
+        "0": 2.362128911111122,
+        "1": 8.515028955555568,
+        "2": 1.6115586222222225
+      }
+    },
+    {
+      "candidate": "no_prior",
+      "reference": "learned_priority",
+      "mean_difference": 4.114892014814822,
+      "ci_low": 0.2934785083333329,
+      "ci_high": 8.294886877777799,
+      "training_seeds": 3,
+      "scenarios": 50,
+      "seed_mean_differences": {
+        "0": 3.295713711111115,
+        "1": 8.891082666666684,
+        "2": 0.15787966666666242
+      }
+    }
+  ],
+  "seed_mean_costs": [
+    {
+      "policy": "learned_priority",
+      "training_seed": 0,
+      "full_objective": 32.86849182222221
+    },
+    {
+      "policy": "learned_priority",
+      "training_seed": 1,
+      "full_objective": 33.42602291111109
+    },
+    {
+      "policy": "learned_priority",
+      "training_seed": 2,
+      "full_objective": 35.25575557777777
+    },
+    {
+      "policy": "legacy_adaptive",
+      "training_seed": 0,
+      "full_objective": 46.01072002222222
+    },
+    {
+      "policy": "legacy_adaptive",
+      "training_seed": 1,
+      "full_objective": 45.10879875555555
+    },
+    {
+      "policy": "legacy_adaptive",
+      "training_seed": 2,
+      "full_objective": 47.89632615555556
+    },
+    {
+      "policy": "no_prior",
+      "training_seed": 0,
+      "full_objective": 36.16420553333333
+    },
+    {
+      "policy": "no_prior",
+      "training_seed": 1,
+      "full_objective": 42.317105577777774
+    },
+    {
+      "policy": "no_prior",
+      "training_seed": 2,
+      "full_objective": 35.41363524444443
+    },
+    {
+      "policy": "residual",
+      "training_seed": 0,
+      "full_objective": 33.80207662222221
+    },
+    {
+      "policy": "residual",
+      "training_seed": 1,
+      "full_objective": 33.80207662222221
+    },
+    {
+      "policy": "residual",
+      "training_seed": 2,
+      "full_objective": 33.80207662222221
+    },
+    {
+      "policy": "retuned_setup_spt",
+      "training_seed": -1,
+      "full_objective": 33.80207662222221
+    },
+    {
+      "policy": "spt",
+      "training_seed": -1,
+      "full_objective": 36.8158154222222
+    }
+  ],
+  "interpretation": "All residual seeds retained step zero and exactly match strong prior. No added PPO gain established. No-prior arm needs separate comparison with strong prior and SPT, not only legacy adaptive.",
+  "model_cpu_load_and_parameters": [
+    {
+      "condition": "residual",
+      "seed": 0,
+      "all_parameters_finite": true,
+      "use_prior": true,
+      "actor_final_weight_max_abs": 0.0
+    },
+    {
+      "condition": "residual",
+      "seed": 1,
+      "all_parameters_finite": true,
+      "use_prior": true,
+      "actor_final_weight_max_abs": 0.0
+    },
+    {
+      "condition": "residual",
+      "seed": 2,
+      "all_parameters_finite": true,
+      "use_prior": true,
+      "actor_final_weight_max_abs": 0.0
+    },
+    {
+      "condition": "no_prior",
+      "seed": 0,
+      "all_parameters_finite": true,
+      "use_prior": false,
+      "actor_final_weight_max_abs": 0.021361038088798523
+    },
+    {
+      "condition": "no_prior",
+      "seed": 1,
+      "all_parameters_finite": true,
+      "use_prior": false,
+      "actor_final_weight_max_abs": 0.013940599747002125
+    },
+    {
+      "condition": "no_prior",
+      "seed": 2,
+      "all_parameters_finite": true,
+      "use_prior": false,
+      "actor_final_weight_max_abs": 0.004825972486287355
+    }
+  ],
+  "decision_example_independently_replayed": true,
+  "decision_example_condition": "no_prior",
+  "decision_example_scenario": 997
+}

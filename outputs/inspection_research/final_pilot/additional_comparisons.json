@@ -1,0 +1,10 @@
+{
+  "candidate": "adaptive",
+  "reference": "spt",
+  "mean_difference": 9.557914888888902,
+  "ci_low": 7.159988085888888,
+  "ci_high": 12.023640997555578,
+  "training_seeds": 5,
+  "scenarios": 50,
+  "uncertainty": "hierarchical training-seed and paired-scenario bootstrap"
+}

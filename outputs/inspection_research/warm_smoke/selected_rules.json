@@ -1,0 +1,17 @@
+{
+  "reactive": {},
+  "belief": {
+    "threshold": 0.55
+  },
+  "spt": {
+    "threshold": 0.4
+  },
+  "periodic": {
+    "interval": 240,
+    "threshold": 0.55
+  },
+  "uncertainty": {
+    "threshold": 0.55,
+    "uncertainty": 0.05
+  }
+}

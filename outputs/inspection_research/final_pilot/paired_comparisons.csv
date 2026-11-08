@@ -1,0 +1,7 @@
+candidate,reference,mean_difference,ci_low,ci_high,training_seeds,scenarios,uncertainty
+adaptive,reactive,-2.1430429777777773,-4.605477434222222,0.11876386388889654,5,50,hierarchical training-seed and paired-scenario bootstrap
+adaptive,belief,6.805177688888893,4.491777499888884,9.219717600888893,5,50,hierarchical training-seed and paired-scenario bootstrap
+adaptive,periodic,0.23796362222222864,-2.1093997487777814,2.660711630222223,5,50,hierarchical training-seed and paired-scenario bootstrap
+adaptive,uncertainty,3.8361278888888957,1.6759643798888857,6.165938115333351,5,50,hierarchical training-seed and paired-scenario bootstrap
+adaptive,no_inspection,1.404807791111114,-0.6246986187777738,3.433378228000001,5,50,hierarchical training-seed and paired-scenario bootstrap
+adaptive,imitation,0.9528673911111126,0.0,3.0681650599999934,5,50,hierarchical training-seed and paired-scenario bootstrap

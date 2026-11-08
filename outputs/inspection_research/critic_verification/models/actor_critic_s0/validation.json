@@ -1,0 +1,20 @@
+[
+  {
+    "step": 0,
+    "mean_cost": 33.55086333333335
+  },
+  {
+    "step": 1024,
+    "mean_cost": 33.49270500000002,
+    "train/learning_rate": 0.0001,
+    "train/entropy_loss": -0.22120647225528955,
+    "train/policy_gradient_loss": -0.0019718185285455547,
+    "train/value_loss": 2.7968623861670494,
+    "train/approx_kl": 0.0003885601181536913,
+    "train/clip_fraction": 0.02490234375,
+    "train/loss": 1.1489087343215942,
+    "train/explained_variance": 0.7810980081558228,
+    "train/n_updates": 4.0,
+    "train/clip_range": 0.1
+  }
+]

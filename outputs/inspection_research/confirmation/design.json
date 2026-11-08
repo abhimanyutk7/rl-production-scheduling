@@ -1,0 +1,33 @@
+{
+  "scenarios": [
+    10012,
+    10013,
+    10014,
+    10015,
+    10016
+  ],
+  "worlds": 128,
+  "jobs": 18,
+  "target": 240,
+  "regimes": [
+    {
+      "name": "fast_low_cost",
+      "duration": 1,
+      "noise": 0.01,
+      "cost": 25.0
+    },
+    {
+      "name": "default_inspection",
+      "duration": 5,
+      "noise": 0.03,
+      "cost": 100.0
+    }
+  ],
+  "headroom": [
+    0.0,
+    60.0
+  ],
+  "horizon": 180,
+  "initial_health_low": 0.2,
+  "provenance": "Exploration-informed hypotheses, fresh validation scenarios, simulated model costs only"
+}

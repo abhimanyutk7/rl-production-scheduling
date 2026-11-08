@@ -1,0 +1,9 @@
+candidate,reference,mean_difference,ci_low,ci_high,training_seeds,scenarios,uncertainty
+event_residual,event_no_prior,-3.3401143481481563,-6.489022186111105,0.2478056422222109,3,50,hierarchical training-seed and paired-scenario bootstrap
+event_residual,plain_residual,0.0,0.0,0.0,3,50,hierarchical training-seed and paired-scenario bootstrap
+event_residual,plain_no_prior,-2.9572572592592596,-6.724758890555559,-0.021345671111091043,3,50,hierarchical training-seed and paired-scenario bootstrap
+event_residual,retuned_setup_spt,0.0,0.0,0.0,3,50,hierarchical training-seed and paired-scenario bootstrap
+event_residual,spt,-1.7532749777777739,-3.675616493888885,0.3853915172222347,3,50,hierarchical training-seed and paired-scenario bootstrap
+event_no_prior,plain_no_prior,0.3828570888888965,-2.509564754444448,3.6289534138889157,3,50,hierarchical training-seed and paired-scenario bootstrap
+event_no_prior,retuned_setup_spt,3.3401143481481563,-0.24780564222221452,6.489022186111105,3,50,hierarchical training-seed and paired-scenario bootstrap
+event_no_prior,spt,1.5868393703703823,-2.1519538985185216,5.084112668703712,3,50,hierarchical training-seed and paired-scenario bootstrap

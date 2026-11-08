@@ -1,0 +1,22 @@
+[
+  {
+    "step": 0,
+    "mean_cost": 57.269699999999986,
+    "changed_dispatches": 63.5
+  },
+  {
+    "step": 2048,
+    "mean_cost": 78.23288833333339,
+    "changed_dispatches": 110.0,
+    "train/learning_rate": 0.0001,
+    "train/entropy_loss": -0.5044819256290793,
+    "train/policy_gradient_loss": -1.660727139096707e-05,
+    "train/value_loss": 7.64332227408886,
+    "train/approx_kl": 3.964232746511698e-07,
+    "train/clip_fraction": 0.0,
+    "train/loss": 3.7627334594726562,
+    "train/explained_variance": -0.0161055326461792,
+    "train/n_updates": 4.0,
+    "train/clip_range": 0.1
+  }
+]

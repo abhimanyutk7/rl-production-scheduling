@@ -1,0 +1,16 @@
+.venv/
+.venv-gpu/
+.codegraph/
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
+*.egg-info/
+*.pyc
+*.pyo
+.DS_Store
+Thumbs.db
+tmp/
+# Generated output is local; selected review artifacts are explicitly versioned.
+outputs/

@@ -1,0 +1,58 @@
+{
+  "rows": 700,
+  "invalid_actions": 0,
+  "daily_records": 2100,
+  "billing_records": 1400,
+  "accounting": "all daily/billing/objective formulas reconciled",
+  "status": "passed",
+  "exact_grid": true,
+  "source_and_controls_unchanged": true,
+  "all_cache_rows_match": true,
+  "episodes_sha256": "b70f4d187778887fa033c861aebc6cb2610c7a81c372c4e08dc996ed928ebcea",
+  "selected_checkpoints": [
+    {
+      "condition": "residual",
+      "seed": 0,
+      "selected_steps": 0,
+      "gpu_update_calls": 32,
+      "model_sha256": "aae3ae2c9a22b0f3465c908a9fbc0a55978c59114de7398622d9289dad326589"
+    },
+    {
+      "condition": "no_prior",
+      "seed": 0,
+      "selected_steps": 65536,
+      "gpu_update_calls": 32,
+      "model_sha256": "a21a5ffc0c339d0db9d675c74e5d93a705e75f35f6d16c870517cc56d33ee14a"
+    },
+    {
+      "condition": "residual",
+      "seed": 1,
+      "selected_steps": 0,
+      "gpu_update_calls": 32,
+      "model_sha256": "334dc1b2d69d77671a294646c3e09ca6fbc949da2f9f746a8b8b34deff73b676"
+    },
+    {
+      "condition": "no_prior",
+      "seed": 1,
+      "selected_steps": 57344,
+      "gpu_update_calls": 32,
+      "model_sha256": "8990b69e8009db3f3830a51a63fad971f7be1fa222e6b32898fa5ba5b3432c84"
+    },
+    {
+      "condition": "residual",
+      "seed": 2,
+      "selected_steps": 0,
+      "gpu_update_calls": 32,
+      "model_sha256": "720177fe784f6ac79932089ff01e79af396dc5b16780dc8a2ce5adad8bf5e1f8"
+    },
+    {
+      "condition": "no_prior",
+      "seed": 2,
+      "selected_steps": 16384,
+      "gpu_update_calls": 32,
+      "model_sha256": "4e01c86b1556e2374f3cb827f007eb533deac26afedd212b794be181f6b574c7"
+    }
+  ],
+  "paired_uncertainty_reproduced": true,
+  "optional_missing_fields": "changed_dispatches and dispatch_decisions are not measured for external legacy/CEM/SPT controls"
+}

@@ -1,0 +1,6 @@
+candidate,reference,mean_difference,ci_low,ci_high,training_seeds,scenarios,uncertainty
+residual,no_prior,-14.937801111111146,-16.134886666666702,-13.740715555555589,1,2,hierarchical training-seed and paired-scenario bootstrap
+residual,retuned_setup_spt,0.0,0.0,0.0,1,2,hierarchical training-seed and paired-scenario bootstrap
+residual,spt,-8.87192333333335,-12.302898888888983,-5.4409477777777155,1,2,hierarchical training-seed and paired-scenario bootstrap
+residual,legacy_adaptive,-19.815381666666752,-35.238343333333404,-4.392420000000101,1,2,hierarchical training-seed and paired-scenario bootstrap
+residual,learned_priority,0.377151666666645,-1.3338766666667183,2.0881800000000084,1,2,hierarchical training-seed and paired-scenario bootstrap

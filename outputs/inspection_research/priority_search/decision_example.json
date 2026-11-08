@@ -1,0 +1,87 @@
+{
+  "scenario": 22300,
+  "time": 27,
+  "machine": 2,
+  "chosen_action": 0,
+  "belief": {
+    "mean": 0.7709725390526291,
+    "std": 0.11659009682031356,
+    "q05": 0.5988928377642382,
+    "median": 0.743954352587982,
+    "q95": 0.9726679034359974,
+    "mode": "idle",
+    "remaining": 0,
+    "power": 20.0,
+    "continuous": 12,
+    "product": 2,
+    "maintenance_age": 27,
+    "measurement_age": -1,
+    "measured": false,
+    "defer": 0,
+    "pm_cooldown": 0,
+    "eligible": 3
+  },
+  "explanation": "Exact terms of this readable priority rule; not a neural-network explanation or a causal estimate.",
+  "candidates": [
+    {
+      "job": 2,
+      "features": {
+        "duration": 0.16666666666666666,
+        "setup": 0.0,
+        "slack": 0.11041666666666666,
+        "age": 0.008333333333333333,
+        "operations_left": 0.3333333333333333,
+        "nominal_energy": 0.028000000000000004
+      },
+      "weighted_terms": {
+        "duration": 0.05676651814954982,
+        "setup": 0.0,
+        "slack": 0.013600218992673233,
+        "age": -0.0009725980295585446,
+        "operations_left": 0.09153905208687177,
+        "nominal_energy": 0.007347475008615981
+      },
+      "score": 0.16828066620815227
+    },
+    {
+      "job": 1,
+      "features": {
+        "duration": 0.6833333333333333,
+        "setup": 0.0,
+        "slack": 0.25625,
+        "age": 0.015277777777777777,
+        "operations_left": 0.6666666666666666,
+        "nominal_energy": 0.11480000000000001
+      },
+      "weighted_terms": {
+        "duration": 0.23274272441315427,
+        "setup": 0.0,
+        "slack": 0.03156277237922278,
+        "age": -0.0017830963875239984,
+        "operations_left": 0.18307810417374354,
+        "nominal_energy": 0.030124647535325524
+      },
+      "score": 0.4757251521139221
+    },
+    {
+      "job": 4,
+      "features": {
+        "duration": 0.6,
+        "setup": 0.36666666666666664,
+        "slack": 0.30625,
+        "age": 0.002777777777777778,
+        "operations_left": 1.0,
+        "nominal_energy": 0.084
+      },
+      "weighted_terms": {
+        "duration": 0.20435946533837937,
+        "setup": 0.4963401400171699,
+        "slack": 0.03772136211175406,
+        "age": -0.00032419934318618157,
+        "operations_left": 0.27461715626061534,
+        "nominal_energy": 0.022042425025847943
+      },
+      "score": 1.0347563494105805
+    }
+  ]
+}

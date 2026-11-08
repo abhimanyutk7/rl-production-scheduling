@@ -1,0 +1,82 @@
+[
+  {
+    "outer_steps": 0,
+    "physical_steps": 0,
+    "choice_steps": 0,
+    "episodes": 0,
+    "mean_cost": 41.71204344444445,
+    "changed_dispatches": 58.6
+  },
+  {
+    "outer_steps": 3072,
+    "physical_steps": 8422,
+    "choice_steps": 3043,
+    "episodes": 25,
+    "mean_cost": 45.33153722222227,
+    "changed_dispatches": 73.9
+  },
+  {
+    "outer_steps": 6144,
+    "physical_steps": 16766,
+    "choice_steps": 6090,
+    "episodes": 50,
+    "mean_cost": 38.7299141111111,
+    "changed_dispatches": 49.6
+  },
+  {
+    "outer_steps": 9728,
+    "physical_steps": 25686,
+    "choice_steps": 9645,
+    "episodes": 79,
+    "mean_cost": 35.60889855555555,
+    "changed_dispatches": 26.8
+  },
+  {
+    "outer_steps": 12800,
+    "physical_steps": 33877,
+    "choice_steps": 12692,
+    "episodes": 104,
+    "mean_cost": 32.96651855555557,
+    "changed_dispatches": 27.4
+  },
+  {
+    "outer_steps": 15872,
+    "physical_steps": 42035,
+    "choice_steps": 15740,
+    "episodes": 128,
+    "mean_cost": 33.595220222222196,
+    "changed_dispatches": 25.6
+  },
+  {
+    "outer_steps": 18944,
+    "physical_steps": 49604,
+    "choice_steps": 18786,
+    "episodes": 154,
+    "mean_cost": 33.9579001111111,
+    "changed_dispatches": 26.9
+  },
+  {
+    "outer_steps": 22016,
+    "physical_steps": 57650,
+    "choice_steps": 21834,
+    "episodes": 179,
+    "mean_cost": 34.261975777777764,
+    "changed_dispatches": 26.8
+  },
+  {
+    "outer_steps": 25600,
+    "physical_steps": 66335,
+    "choice_steps": 25389,
+    "episodes": 207,
+    "mean_cost": 34.650391666666636,
+    "changed_dispatches": 26.6
+  },
+  {
+    "outer_steps": 25604,
+    "physical_steps": 66340,
+    "choice_steps": 25393,
+    "episodes": 207,
+    "mean_cost": 33.98088599999996,
+    "changed_dispatches": 25.4
+  }
+]

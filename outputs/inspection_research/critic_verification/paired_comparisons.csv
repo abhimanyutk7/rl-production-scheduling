@@ -1,0 +1,7 @@
+candidate,reference,mean_difference,ci_low,ci_high,training_seeds,scenarios,uncertainty
+actor_critic,actor_only,3.5409888888889434,3.389861111111216,3.6921166666666707,1,2,hierarchical training-seed and paired-scenario bootstrap
+actor_critic,imitation,3.5409888888889434,3.389861111111216,3.6921166666666707,1,2,hierarchical training-seed and paired-scenario bootstrap
+actor_critic,legacy_adaptive,3.5409888888889434,3.389861111111216,3.6921166666666707,1,2,hierarchical training-seed and paired-scenario bootstrap
+actor_critic,spt,25.86752111111121,14.020198888888928,37.71484333333349,1,2,hierarchical training-seed and paired-scenario bootstrap
+actor_critic,belief,21.839793333333326,14.741931111111043,28.937655555555608,1,2,hierarchical training-seed and paired-scenario bootstrap
+actor_critic,uncertainty,4.238761111111135,0.11333111111105865,8.36419111111121,1,2,hierarchical training-seed and paired-scenario bootstrap

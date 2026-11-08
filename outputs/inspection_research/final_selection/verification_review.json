@@ -1,0 +1,133 @@
+{
+  "status": "passed",
+  "audit": "Independent locked-selection/result audit; no training or source edits",
+  "validation_accounting": {
+    "rows": 110,
+    "daily_records": 330,
+    "billing_records": 220,
+    "invalid_actions": 0,
+    "maximum_accounting_errors": {
+      "daily": 7.105427357601002e-15,
+      "billing": 3.637978807091713e-12,
+      "objective": 1.4210854715202004e-14
+    }
+  },
+  "test_accounting": {
+    "rows": 200,
+    "daily_records": 600,
+    "billing_records": 400,
+    "invalid_actions": 0,
+    "maximum_accounting_errors": {
+      "daily": 7.105427357601002e-15,
+      "billing": 3.637978807091713e-12,
+      "objective": 1.4210854715202004e-14
+    }
+  },
+  "exact_validation_grid": true,
+  "exact_test_grid": true,
+  "common_validation_minima_match": true,
+  "selection_hash_matches": true,
+  "pre_test_locking_code_reviewed": true,
+  "selection_timestamp_precedes_final_test_cache_timestamp": true,
+  "source_helper_parent_candidate_hashes_match": true,
+  "selected_neural": {
+    "name": "residual_dispatch_s0",
+    "kind": "neural",
+    "path": "outputs\\inspection_research\\residual_dispatch\\models\\no_prior_s0",
+    "sha256": "a21a5ffc0c339d0db9d675c74e5d93a705e75f35f6d16c870517cc56d33ee14a",
+    "selected_steps": 65536
+  },
+  "selected_cem": {
+    "name": "cem_s1",
+    "kind": "cem",
+    "path": "outputs\\inspection_research\\priority_search\\policy_s1.json",
+    "sha256": "330d4e1598f3de525bcc434cd66ae4564dfd827d8852ef84e048321a9a7ea59c",
+    "weights": [
+      0.3726491288929786,
+      0.9872141684071128,
+      0.22276822745446676,
+      -0.21784913503887732,
+      0.10775561096750011,
+      0.0,
+      0.6474658516105329,
+      0.9775176729708205
+    ]
+  },
+  "best_overall": {
+    "name": "retuned_setup_spt",
+    "kind": "rule",
+    "weights": [
+      1.0,
+      4.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.55,
+      1.0
+    ]
+  },
+  "selected_neural_cpu_load_finite": true,
+  "decision_example_exact_selected_path_and_independently_replayed": true,
+  "fixed_policy_paired_intervals_independently_match": true,
+  "uncertainty_scope": "50 paired scenarios for already selected fixed policies; excludes training/selection uncertainty",
+  "paired_comparisons": [
+    {
+      "candidate": "selected_neural",
+      "reference": "selected_cem",
+      "mean_difference": 5.064175822222224,
+      "ci_low": 2.7688925661111123,
+      "ci_high": 7.433772695555573,
+      "training_seeds": 0,
+      "scenarios": 50,
+      "seed_mean_differences": {
+        "-1": 5.064175822222224
+      }
+    },
+    {
+      "candidate": "selected_neural",
+      "reference": "retuned_setup_spt",
+      "mean_difference": 3.4248959333333295,
+      "ci_low": 1.8746370105555372,
+      "ci_high": 5.356548313888886,
+      "training_seeds": 0,
+      "scenarios": 50,
+      "seed_mean_differences": {
+        "-1": 3.4248959333333295
+      }
+    },
+    {
+      "candidate": "selected_neural",
+      "reference": "spt",
+      "mean_difference": 1.9607300666666452,
+      "ci_low": -0.4970980961111466,
+      "ci_high": 4.584230350555521,
+      "training_seeds": 0,
+      "scenarios": 50,
+      "seed_mean_differences": {
+        "-1": 1.9607300666666452
+      }
+    }
+  ],
+  "validation_costs": {
+    "cem_s0": 35.841126999999965,
+    "cem_s1": 35.283523666666625,
+    "cem_s2": 35.47567744444443,
+    "event_dispatch_s0": 42.768445666666686,
+    "event_dispatch_s1": 37.615521555555546,
+    "event_dispatch_s2": 37.325151000000005,
+    "residual_dispatch_s0": 36.972543333333284,
+    "residual_dispatch_s1": 44.16120022222223,
+    "residual_dispatch_s2": 37.28964544444444,
+    "retuned_setup_spt": 35.26355177777776,
+    "spt": 36.27918166666665
+  },
+  "test_means": {
+    "retuned_setup_spt": 36.308087666666644,
+    "selected_cem": 34.66880777777775,
+    "selected_neural": 39.73298359999998,
+    "spt": 37.772253533333334
+  },
+  "episodes_sha256": "1f818aa3d5c134c8cba749972eb96383d7ff5876d57cdd0ed45b79861f1aa0de",
+  "selection_sha256": "423d8586c8d22a5b9110ab2d3fcb832033eff461b5888bb63ce2a2fa189d7e65"
+}

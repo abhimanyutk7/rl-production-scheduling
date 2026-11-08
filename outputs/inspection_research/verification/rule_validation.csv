@@ -1,0 +1,14 @@
+key,policy,parameters,mean_cost,validation_episodes
+reactive{},reactive,{},27.37831833333334,2
+"belief{""threshold"": 0.4}",belief,"{""threshold"": 0.4}",29.24866055555553,2
+"belief{""threshold"": 0.55}",belief,"{""threshold"": 0.55}",30.28837611111108,2
+"belief{""threshold"": 0.7}",belief,"{""threshold"": 0.7}",31.241184444444436,2
+"spt{""threshold"": 0.4}",spt,"{""threshold"": 0.4}",27.65606055555554,2
+"spt{""threshold"": 0.55}",spt,"{""threshold"": 0.55}",30.03981722222225,2
+"spt{""threshold"": 0.7}",spt,"{""threshold"": 0.7}",31.15718499999997,2
+"periodic{""interval"": 60, ""threshold"": 0.55}",periodic,"{""interval"": 60, ""threshold"": 0.55}",37.925695555555535,2
+"periodic{""interval"": 120, ""threshold"": 0.55}",periodic,"{""interval"": 120, ""threshold"": 0.55}",34.7433083333333,2
+"periodic{""interval"": 240, ""threshold"": 0.55}",periodic,"{""interval"": 240, ""threshold"": 0.55}",32.52331499999997,2
+"uncertainty{""threshold"": 0.55, ""uncertainty"": 0.02}",uncertainty,"{""threshold"": 0.55, ""uncertainty"": 0.02}",32.91993833333331,2
+"uncertainty{""threshold"": 0.55, ""uncertainty"": 0.05}",uncertainty,"{""threshold"": 0.55, ""uncertainty"": 0.05}",33.454783888888876,2
+"uncertainty{""threshold"": 0.55, ""uncertainty"": 0.08}",uncertainty,"{""threshold"": 0.55, ""uncertainty"": 0.08}",31.06937777777783,2

@@ -1,0 +1,263 @@
+{
+  "review": "independent full-cycle saved-artifact audit",
+  "status": "passed",
+  "source_hash": "6e327fa8659a4b498fb432cc72cd9c418916e0cd1b04f65771dada92fbcbb55a",
+  "config_hash": "531cf63256cb6793dbe015f40311f6d937f53d3703ecf7e1ae0c2a5fb99692c6",
+  "checks": {
+    "rows": 12500,
+    "daily_entries": 750000,
+    "billing_entries": 25000,
+    "invalid_actions": 0,
+    "finite_scalar_and_ledgers": true,
+    "cache_rows": 12500,
+    "completed_models": 15,
+    "selected_checkpoints": [
+      {
+        "model": "adaptive_s0",
+        "selected_steps": 0,
+        "validation_cost": 907.6232672222284,
+        "stepzero_matches_imitation": true,
+        "pm_imitation_recall": 0.07604562491178513
+      },
+      {
+        "model": "adaptive_s1",
+        "selected_steps": 0,
+        "validation_cost": 1014.1454844444497,
+        "stepzero_matches_imitation": true,
+        "pm_imitation_recall": 0.04509017989039421
+      },
+      {
+        "model": "adaptive_s2",
+        "selected_steps": 0,
+        "validation_cost": 856.8707050000032,
+        "stepzero_matches_imitation": true,
+        "pm_imitation_recall": 0.009483667090535164
+      },
+      {
+        "model": "adaptive_s3",
+        "selected_steps": 8192,
+        "validation_cost": 945.5222955555589,
+        "stepzero_matches_imitation": null,
+        "pm_imitation_recall": 0.03991596773266792
+      },
+      {
+        "model": "adaptive_s4",
+        "selected_steps": 0,
+        "validation_cost": 996.620091666671,
+        "stepzero_matches_imitation": true,
+        "pm_imitation_recall": 0.02400835044682026
+      },
+      {
+        "model": "exact_health_s0",
+        "selected_steps": 0,
+        "validation_cost": 824.8474999999981,
+        "stepzero_matches_imitation": null,
+        "pm_imitation_recall": 0.5410895943641663
+      },
+      {
+        "model": "exact_health_s1",
+        "selected_steps": 8192,
+        "validation_cost": 778.7850949999993,
+        "stepzero_matches_imitation": null,
+        "pm_imitation_recall": 0.41258740425109863
+      },
+      {
+        "model": "exact_health_s2",
+        "selected_steps": 0,
+        "validation_cost": 850.4840200000053,
+        "stepzero_matches_imitation": null,
+        "pm_imitation_recall": 0.2716701924800873
+      },
+      {
+        "model": "exact_health_s3",
+        "selected_steps": 8192,
+        "validation_cost": 856.9746416666649,
+        "stepzero_matches_imitation": null,
+        "pm_imitation_recall": 0.3388429880142212
+      },
+      {
+        "model": "exact_health_s4",
+        "selected_steps": 0,
+        "validation_cost": 796.8240494444456,
+        "stepzero_matches_imitation": null,
+        "pm_imitation_recall": 0.5526036024093628
+      },
+      {
+        "model": "no_inspection_s0",
+        "selected_steps": 0,
+        "validation_cost": 840.0904738888938,
+        "stepzero_matches_imitation": null,
+        "pm_imitation_recall": 0.514018714427948
+      },
+      {
+        "model": "no_inspection_s1",
+        "selected_steps": 0,
+        "validation_cost": 828.4349705555584,
+        "stepzero_matches_imitation": null,
+        "pm_imitation_recall": 0.31945890188217163
+      },
+      {
+        "model": "no_inspection_s2",
+        "selected_steps": 0,
+        "validation_cost": 814.9214988888821,
+        "stepzero_matches_imitation": null,
+        "pm_imitation_recall": 0.4581124186515808
+      },
+      {
+        "model": "no_inspection_s3",
+        "selected_steps": 0,
+        "validation_cost": 779.6537327777742,
+        "stepzero_matches_imitation": null,
+        "pm_imitation_recall": 0.5495307445526123
+      },
+      {
+        "model": "no_inspection_s4",
+        "selected_steps": 32768,
+        "validation_cost": 791.511148888887,
+        "stepzero_matches_imitation": null,
+        "pm_imitation_recall": 0.41182681918144226
+      }
+    ]
+  },
+  "failures": [],
+  "summary": [
+    {
+      "policy": "adaptive",
+      "full_objective": 965.9632061133357,
+      "completion_rate": 0.998074,
+      "on_time_rate": 0.4436915555555555,
+      "inspection_count": 182.1252,
+      "belief_coverage90": 0.8718565,
+      "belief_health_mae": 0.011901637909296273
+    },
+    {
+      "policy": "belief",
+      "full_objective": 753.5838426044451,
+      "completion_rate": 0.9988455555555555,
+      "on_time_rate": 0.5089677777777778,
+      "inspection_count": 0.0,
+      "belief_coverage90": 0.9002595833333333,
+      "belief_health_mae": 0.021047245992253924
+    },
+    {
+      "policy": "exact_health",
+      "full_objective": 849.4193412848903,
+      "completion_rate": 0.9985486666666665,
+      "on_time_rate": 0.4531171111111111,
+      "inspection_count": 0.2016,
+      "belief_coverage90": 0.8976274583333334,
+      "belief_health_mae": 0.02834931804050917
+    },
+    {
+      "policy": "imitation",
+      "full_objective": 991.630636279113,
+      "completion_rate": 0.9983177777777777,
+      "on_time_rate": 0.42683000000000004,
+      "inspection_count": 252.5056,
+      "belief_coverage90": 0.865632,
+      "belief_health_mae": 0.011442595220004952
+    },
+    {
+      "policy": "no_inspection",
+      "full_objective": 846.8242085195567,
+      "completion_rate": 0.9985675555555555,
+      "on_time_rate": 0.4667657777777777,
+      "inspection_count": 0.0,
+      "belief_coverage90": 0.899856,
+      "belief_health_mae": 0.0279513151788306
+    },
+    {
+      "policy": "periodic",
+      "full_objective": 922.0941479888902,
+      "completion_rate": 0.9985122222222221,
+      "on_time_rate": 0.46284333333333333,
+      "inspection_count": 599.66,
+      "belief_coverage90": 0.8716391666666667,
+      "belief_health_mae": 0.006767606379655395
+    },
+    {
+      "policy": "reactive",
+      "full_objective": 1118.3867225244478,
+      "completion_rate": 0.99772,
+      "on_time_rate": 0.3629677777777778,
+      "inspection_count": 0.0,
+      "belief_coverage90": 0.9016577083333333,
+      "belief_health_mae": 0.035383146261767424
+    },
+    {
+      "policy": "spt",
+      "full_objective": 652.846510597775,
+      "completion_rate": 0.9992933333333333,
+      "on_time_rate": 0.6066666666666666,
+      "inspection_count": 0.0,
+      "belief_coverage90": 0.89875125,
+      "belief_health_mae": 0.0212972867505205
+    },
+    {
+      "policy": "uncertainty",
+      "full_objective": 793.1747548866668,
+      "completion_rate": 0.9987233333333333,
+      "on_time_rate": 0.49509888888888887,
+      "inspection_count": 13.704,
+      "belief_coverage90": 0.8764302083333333,
+      "belief_health_mae": 0.012398111787217473
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "candidate": "adaptive",
+      "reference": "imitation",
+      "mean_difference": -25.667430165777372,
+      "ci_low": -78.74097780919888,
+      "ci_high": 0.0,
+      "training_seeds": 5,
+      "scenarios": 500,
+      "uncertainty": "hierarchical training-seed and paired-scenario bootstrap"
+    },
+    {
+      "candidate": "adaptive",
+      "reference": "no_inspection",
+      "mean_difference": 119.13899759377898,
+      "ci_low": 86.16276928576755,
+      "ci_high": 155.47156457372327,
+      "training_seeds": 5,
+      "scenarios": 500,
+      "uncertainty": "hierarchical training-seed and paired-scenario bootstrap"
+    },
+    {
+      "candidate": "adaptive",
+      "reference": "spt",
+      "mean_difference": 313.1166955155607,
+      "ci_low": 277.3877131386713,
+      "ci_high": 355.844162458005,
+      "training_seeds": 5,
+      "scenarios": 500,
+      "uncertainty": "hierarchical training-seed and paired-scenario bootstrap"
+    },
+    {
+      "candidate": "adaptive",
+      "reference": "belief",
+      "mean_difference": 212.37936350889066,
+      "ci_low": 177.01176913282367,
+      "ci_high": 254.8197304940012,
+      "training_seeds": 5,
+      "scenarios": 500,
+      "uncertainty": "hierarchical training-seed and paired-scenario bootstrap"
+    },
+    {
+      "candidate": "adaptive",
+      "reference": "uncertainty",
+      "mean_difference": 172.7884512266689,
+      "ci_low": 137.6842649689131,
+      "ci_high": 215.53632092331293,
+      "training_seeds": 5,
+      "scenarios": 500,
+      "uncertainty": "hierarchical training-seed and paired-scenario bootstrap"
+    }
+  ],
+  "limitations": [
+    "Saved artifacts verified; no new simulator replay/training performed",
+    "Validation-selected model weights preserved; post-PPO discarded checkpoints unavailable for independent replay",
+    "Step-zero saved adaptive models verified bitwise identical to their imitation policy"
+  ]
+}

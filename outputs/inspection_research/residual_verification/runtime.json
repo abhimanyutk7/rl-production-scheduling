@@ -1,0 +1,15 @@
+{
+  "python": "3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]",
+  "executable": "C:\\RL project\\.venv-gpu\\Scripts\\python.exe",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "numpy": "2.2.6",
+    "gymnasium": "1.2.3",
+    "stable-baselines3": "2.9.0",
+    "sb3-contrib": "2.9.0",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.9"
+  },
+  "device_policy": "CPU environment and inference; CUDA gradient updates",
+  "prior_CPU_environment_preserved": true
+}

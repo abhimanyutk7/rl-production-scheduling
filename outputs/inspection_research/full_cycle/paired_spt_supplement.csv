@@ -1,0 +1,2 @@
+candidate,reference,mean_difference,ci_low,ci_high,training_seeds,scenarios,uncertainty,analysis_status
+adaptive,spt,313.1166955155607,277.3877131386713,355.844162458005,5,500,hierarchical training-seed and paired-scenario bootstrap,supplemental comparison after primary run; same fixed bootstrap

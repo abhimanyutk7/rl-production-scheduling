@@ -1,0 +1,67 @@
+{
+  "scenario": 22100,
+  "time": 29,
+  "machine": 2,
+  "chosen_action": 0,
+  "belief": {
+    "mean": 0.7652886825346927,
+    "std": 0.11845661361267382,
+    "q05": 0.5847045133006955,
+    "median": 0.7471328575676784,
+    "q95": 0.9385114090114879,
+    "mode": "idle",
+    "remaining": 0,
+    "power": 20.0,
+    "continuous": 24,
+    "product": 1,
+    "maintenance_age": 29,
+    "measurement_age": -1,
+    "measured": false,
+    "defer": 0,
+    "pm_cooldown": 0,
+    "eligible": 2
+  },
+  "explanation": "Exact terms of this readable priority rule; not a neural-network explanation or a causal estimate.",
+  "candidates": [
+    {
+      "job": 4,
+      "features": {
+        "duration": 0.2,
+        "setup": 0.26666666666666666,
+        "slack": 0.14791666666666667,
+        "age": 0.013194444444444444,
+        "operations_left": 1.0,
+        "nominal_energy": 0.033600000000000005
+      },
+      "weighted_terms": {
+        "duration": 0.2,
+        "setup": 0.13333333333333333,
+        "slack": 0.0,
+        "age": 0.0,
+        "operations_left": 0.0,
+        "nominal_energy": 0.0
+      },
+      "score": 0.33333333333333337
+    },
+    {
+      "job": 6,
+      "features": {
+        "duration": 0.4166666666666667,
+        "setup": 0.36666666666666664,
+        "slack": 0.20625,
+        "age": 0.003472222222222222,
+        "operations_left": 0.6666666666666666,
+        "nominal_energy": 0.04666666666666667
+      },
+      "weighted_terms": {
+        "duration": 0.4166666666666667,
+        "setup": 0.18333333333333332,
+        "slack": 0.0,
+        "age": 0.0,
+        "operations_left": 0.0,
+        "nominal_energy": 0.0
+      },
+      "score": 0.6
+    }
+  ]
+}

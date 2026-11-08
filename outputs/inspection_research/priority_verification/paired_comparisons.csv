@@ -1,0 +1,6 @@
+candidate,reference,mean_difference,ci_low,ci_high,training_seeds,scenarios,uncertainty
+learned_priority,spt,0.0,0.0,0.0,1,2,hierarchical training-seed and paired-scenario bootstrap
+learned_priority,belief,-3.4448922222222276,-6.860447777777775,-0.02933666666667989,1,2,hierarchical training-seed and paired-scenario bootstrap
+learned_priority,uncertainty,-2.0547638888888677,-4.46767333333332,0.35814555555558414,1,2,hierarchical training-seed and paired-scenario bootstrap
+learned_priority,reactive,-11.966994999999987,-17.07263444444445,-6.861355555555523,1,2,hierarchical training-seed and paired-scenario bootstrap
+learned_priority,learned_no_inspection,0.0,0.0,0.0,1,2,hierarchical training-seed and paired-scenario bootstrap
